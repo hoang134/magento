@@ -1,5 +1,5 @@
 <?php
-$json=$block->get();
+$json=$block->getWeather();
 $data=json_decode($json);
 date_default_timezone_set('asia/ho_chi_minh');
  $time=  date("h:i:sa");
@@ -23,6 +23,8 @@ date_default_timezone_set('asia/ho_chi_minh');
             height: 100%;
             background-image: linear-gradient(#81D4FA, #2196F3);
             background-repeat: no-repeat
+
+
         }
 
         .card0 {
@@ -30,7 +32,8 @@ date_default_timezone_set('asia/ho_chi_minh');
         }
 
         .card1 {
-            background-image: linear-gradient(#2196F3, #81D4FA);
+
+
             padding: 30px 20px 30px 50px
         }
 
@@ -127,10 +130,10 @@ date_default_timezone_set('asia/ho_chi_minh');
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 <div class="container-fluid px-1 px-sm-3 py-5 mx-auto">
-    <div class="row d-flex justify-content-center">
+    <div style="width: 945px;height: 500px;" class="row d-flex justify-content-center">
         <div class="row card0">
-            <div class="card1 col-lg-8 col-md-7"> <small>the.weather</small>
-                    <div class="text-center"> <img class="image mt-5" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Sun-soleil2.svg/500px-Sun-soleil2.svg.png"> </div>
+            <div id="weather"  class="card1 col-lg-8 col-md-7" style="background-image:url('https://images-na.ssl-images-amazon.com/images/I/51y6dy0T8sL._AC_SL1000_.jpg');"> <small>the.weather</small>
+<!--                    <div class="text-center"> <img class="image mt-5" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Sun-soleil2.svg/500px-Sun-soleil2.svg.png"> </div>-->
                 <div class="row px-3 mt-3 mb-3">
                     <h1 class="large-font mr-3"><?= $data->main->temp-273.15;?>&#176;</h1>
                     <div class="d-flex flex-column mr-3">
@@ -154,7 +157,12 @@ date_default_timezone_set('asia/ho_chi_minh');
                     </div>
                     <div class="row px-3">
                         <p style="color:#dcaa35" class="light-text">des</p>
-                        <p style="color:#dcaa35" class="ml-auto"><?= $data->weather[0]->description; ?></p>
+                        <p id="des" style="color:#dcaa35" class="ml-auto"><?= $data->weather[0]->description; ?></p>
+                        <script>
+
+
+                                document.getElementById('weather').setAttribute("style", "background-image: url('https://shiftyjelly.files.wordpress.com/2013/11/w.jpg?w=750&h=425')");
+                        </script>
                     </div>
 
                     <div class="line mt-3"></div>
@@ -180,6 +188,7 @@ date_default_timezone_set('asia/ho_chi_minh');
         </div>
     </div>
 </div>
+
 </body>
 
 </html>

@@ -78,7 +78,7 @@ class Info extends \Magento\Framework\App\Action\Action {
             $SECURE_SECRET = $this->scopeConfig->getValue('payment/vnpay/hash_code');
             if (isset($SECURE_SECRET)) {
                 $vnpSecureHash = hash('sha256', $SECURE_SECRET . $hashdata);
-                $vnp_Url .= 'vnp_SecureHashType=SHA256&vnp_SecureHash=' . $vnpSecureHash;
+                $vnp_Url .= 'vnp_SecureHashType=M5D&vnp_SecureHash=' . $vnpSecureHash;
             }
         }
         $this->jsonFac->setData($vnp_Url);

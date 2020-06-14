@@ -8,7 +8,7 @@ class News extends Template
 {
 
 
-    public function  get()
+    public function  getWeather()
     {
         $path='http://api.openweathermap.org/data/2.5/weather?q=hanoi&appid=c6afe708c675d40432cf36b421574dcd';
         $ch = curl_init();

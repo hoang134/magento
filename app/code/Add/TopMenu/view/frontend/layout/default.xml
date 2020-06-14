@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="catalog.topnav">
+
+                <block class="Add\TopMenu\Block\Html\CustomLink" as="topmenu-Exchangerates-link" name="topmenu.Exchangerates.link">
+                    <arguments>
+                        <argument name="label" xsi:type="string">Exchangerates </argument>
+
+                        <argument name="path" xsi:type="string">exchangerates/index/index/</argument>
+                        <argument name="attributes" xsi:type="array">
+                            <item name="class" xsi:type="string">level-top ui-corner-all</item>
+                        </argument>
+                    </arguments>
+                </block>
+            <block class="Add\TopMenu\Block\Html\CustomLink" as="topmenu-Newspage-link" name="topmenu.Newspage.link">
+                <arguments>
+                    <argument name="label" xsi:type="string">Newspage </argument>
+                    <argument name="path" xsi:type="string">newspage/index/index/</argument>
+                    <argument name="attributes" xsi:type="array">
+                        <item name="class" xsi:type="string">level-top ui-corner-all</item>
+                    </argument>
+                </arguments>
+            </block>
+            <block class="Add\TopMenu\Block\Html\CustomLink" as="topmenu-theweather-link" name="topmenu.theweather.link">
+                <arguments>
+                    <argument name="label" xsi:type="string">Theweather </argument>
+                    <argument name="path" xsi:type="string">theweather/index/index/</argument>
+                    <argument name="attributes" xsi:type="array">
+                        <item name="class" xsi:type="string">level-top ui-corner-all</item>
+                    </argument>
+                </arguments>
+            </block>
+
+            <block class="Add\TopMenu\Block\Html\CustomLink" as="topmenu-admin-link" name="topmenu.admin.link">
+                <arguments>
+                    <argument name="label" xsi:type="string">Admin </argument>
+                    <argument name="path" xsi:type="string">admin_magento</argument>
+                    <argument name="attributes" xsi:type="array">
+                        <item name="class" xsi:type="string">level-top ui-corner-all</item>
+                    </argument>
+                </arguments>
+            </block>
+
+
+        </referenceBlock>
+    </body>
+</page>
