@@ -6,6 +6,8 @@ return [
         'Magento_Directory' => 1,
         'Magento_Theme' => 1,
         'Magento_Variable' => 1,
+        'Codilar_HelloWorld' => 1,
+        'CreateApi_CustomApi' => 1,
         'Magento_Backend' => 1,
         'Floatrates_exchangerates' => 1,
         'Magento_Eav' => 1,
@@ -226,7 +228,6 @@ return [
         'Temando_Shipping' => 1,
         'Vertex_Tax' => 1,
         'Vnnews_NewsPage' => 1,
-        'Vnpayment_VNPAY' => 1,
-        'XXX_Productby' => 1
+        'Vnpayment_VNPAY' => 1
     ]
 ];

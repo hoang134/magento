@@ -1,10 +1,11 @@
 <?php
 $json=$block->getWeather();
 $data=json_decode($json);
-date_default_timezone_set('asia/ho_chi_minh');
- $time=  date("h:i:sa");
- $day=date("l");
- $date=date("Y-m-d");
+
+$arrTime=$block->updateTime();
+ $time= $arrTime['time'];
+ $day=$arrTime['day'];
+ $date=$arrTime['date'];
 ?>
 
 <!doctype html>
@@ -153,15 +154,20 @@ date_default_timezone_set('asia/ho_chi_minh');
                     <p style="font-size: 20px">Weather Details</p>
                     <div class="row px-3">
                         <p style="color:#dcaa35" class="light-text">main</p>
-                        <p style="color:#dcaa35" class="ml-auto"><?= $data->weather[0]->main;?></p>
+                        <p id="main" style="color:#dcaa35" class="ml-auto"><?= $data->weather[0]->main;?></p>
                     </div>
                     <div class="row px-3">
                         <p style="color:#dcaa35" class="light-text">des</p>
                         <p id="des" style="color:#dcaa35" class="ml-auto"><?= $data->weather[0]->description; ?></p>
                         <script>
-
-
-                                document.getElementById('weather').setAttribute("style", "background-image: url('https://shiftyjelly.files.wordpress.com/2013/11/w.jpg?w=750&h=425')");
+                                var  des=document.getElementById('des').innerHTML;
+                                if (des=="broken clouds")
+                                    document.getElementById('weather').setAttribute("style", "background-image: url('https://shiftyjelly.files.wordpress.com/2013/11/w.jpg?w=750&h=425')");
+                                var  main=document.getElementById('main').innerHTML;
+                                if(main=="rain"){
+                                    document.getElementById('weather').setAttribute("style", "background-image: url('https://lh3.googleusercontent.com/tWCIaaJGSkoDZr-fvhzAZJabCJun_gUzwCXtlvDJoDDXgsUg8bVNOiyp6_qa4-aaksyC2U-VYuRfuur7I3q4NpHxMVgaPzjtfJ71jMZX6EYPd8OKIwmhlSy8J8QO9OnXzfYVPG0H1T6aAH33JG6zezcU1nBijyFYsVXJBnQMuBIEeL3Y7i4nSOBLq2woEl7n6NTLERuy4AA5btfDPFiFKi1YDlD1cndVIjSjQtR3EmBQ_LOj2VRZo9kyGulDRGHvzfsgfT7LXNobBxmjKpRXLuX2S7gR47pChc_ff-0cOb0DQGB4aBusxR82A7-w7cd8rgW_e48bGBqqemPU1crpvT0bMTeRhemqd_S0nmMRbT25NohC23NHw09OFYs5_yKCrSuFEYvxJtOva6bvId5QKnVzyAK4JS3rtkT8VERDoK6EERbEii9wZNJ5A1YwAqht2jBbOqDK7HyFD1d0cCnYNXEPN1nLp_xoSJNAo-M3dsu-VHmDUvO9xhlw32BDsOFNnu3sz4gra1CBQzlU7SVcvQkH81xYesxj6TCau2bp6RNxl-NvQk__Ni0PNsyJ5al3D4HTk-so-fNlbbP7NhCNdXhHK9pjtMPmhJBdI4VxMc80KJsnn_KT6Q=w1516-h853-no?.jpg')");
+                                    document.getElementsByTagName('body')[0].setAttribute("style","background-image: linear-gradient(#7d7d7d, #666)");
+                                }
                         </script>
                     </div>
 

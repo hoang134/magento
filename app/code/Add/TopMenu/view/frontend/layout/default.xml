@@ -33,6 +33,25 @@
                 </arguments>
             </block>
 
+            <block class="Add\TopMenu\Block\Html\CustomLink" as="topmenu-apiById-link" name="topmenu.apiById.link">
+                <arguments>
+                    <argument name="label" xsi:type="string">ApiById </argument>
+                    <argument name="path" xsi:type="string">rest/V1/product/1/entity_id</argument>
+                    <argument name="attributes" xsi:type="array">
+                        <item name="class" xsi:type="string">level-top ui-corner-all</item>
+                    </argument>
+                </arguments>
+            </block>
+            <block class="Add\TopMenu\Block\Html\CustomLink" as="topmenu-apiAll-link" name="topmenu.apiAll.link">
+                <arguments>
+                    <argument name="label" xsi:type="string">ApiAllProducts </argument>
+                    <argument name="path" xsi:type="string">rest/V1/product</argument>
+                    <argument name="attributes" xsi:type="array">
+                        <item name="class" xsi:type="string">level-top ui-corner-all</item>
+                    </argument>
+                </arguments>
+            </block>
+
             <block class="Add\TopMenu\Block\Html\CustomLink" as="topmenu-admin-link" name="topmenu.admin.link">
                 <arguments>
                     <argument name="label" xsi:type="string">Admin </argument>
